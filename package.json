@@ -1,0 +1,20 @@
+{
+  "name": "com.liteninja.analytics",
+  "version": "1.0.0",
+  "displayName": "Ludo Analytics",
+  "description": "A flexible and extensible analytics service for Unity, designed to simplify the integration of multiple third-party and custom analytics providers. ",
+  "unity": "2021.3",
+  "documentationUrl": "https://github.com/sponticelli/Ludo-Analytics/blob/main/Documentation/README.md",
+  "changelogUrl": "https://github.com/sponticelli/Ludo-Analytics/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/sponticelli/Ludo-Analytics/blob/main/LICENSE",
+  "dependencies": {
+  },
+  "keywords": [
+    "ludo",
+    "analytics"
+  ],
+  "author": {
+    "name": "Sandro Ponticelli",
+    "url": "https://github.com/sponticelli"
+  }
+}
