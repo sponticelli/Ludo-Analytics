@@ -103,11 +103,26 @@ private void OnApplicationQuit()
 }
 ```
 
-## Using the Factory
+## Using Dependency Injection
 
-For convenience, you can use the `AnalyticsFactory` to create and set up the service:
+The recommended way to use Ludo Analytics is with dependency injection:
 
 ```csharp
-// Create a service with a debug provider
-IAnalyticsService service = AnalyticsFactory.CreateServiceWithDebugProvider();
+// In your MonoBehaviour or other injectable class
+[Inject] private IAnalyticsService _analyticsService;
+
+private void Start()
+{
+    _analyticsService.TrackEvent("game_started");
+}
 ```
+
+For detailed instructions on setting up dependency injection, see the [Dependency Injection Guide](Documentation/DependencyInjection.md).
+
+## Documentation
+
+For more detailed documentation, see the following guides:
+
+- [Dependency Injection Guide](Documentation/DependencyInjection.md)
+- [Creating Custom Providers](Documentation/CustomProviders.md)
+- [General Documentation](Documentation/README.md)
