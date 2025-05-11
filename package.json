@@ -16,5 +16,9 @@
   "author": {
     "name": "Sandro Ponticelli",
     "url": "https://github.com/sponticelli"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sponticelli/Ludo-Analytics.git"
   }
 }
