@@ -25,26 +25,14 @@ First, register the `AnalyticsService` as the implementation for `IAnalyticsServ
 public class AnalyticsInstaller : ScriptableObjectInstaller
 {
     [SerializeField] private DebugProviderConfig debugProviderConfig;
-    [SerializeField] private AnalyticsService analyticsServicePrefab;
 
     public override void InstallBindings(IContainer container)
     {
-        // Bind the analytics service
-        BindAndLog<IAnalyticsService, AnalyticsService>(container, analyticsServicePrefab, "AnalyticsService");
+        // Bind the analytics service as a singleton
+        container.Bind<IAnalyticsService>().To<AnalyticsService>().AsSingleton();
 
         // Bind the debug provider config
         container.Bind<DebugProviderConfig>().FromInstance(debugProviderConfig);
-    }
-
-    private void BindAndLog<TInterface, TImplementation>(IContainer container, TImplementation prefab, string serviceName)
-        where TInterface : class
-        where TImplementation : MonoBehaviour, TInterface
-    {
-        bool bound = BindPersistentComponent<TInterface, TImplementation>(container, prefab);
-        if (!bound)
-        {
-            Debug.LogError($"[AnalyticsInstaller] {serviceName} binding process failed!");
-        }
     }
 }
 
